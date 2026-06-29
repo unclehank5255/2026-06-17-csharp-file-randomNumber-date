@@ -48,6 +48,8 @@ class Program
 
         }
     }
+    //檔案處理題目1
+    //寫一篇中文歌的歌詞到到自己指定的文字檔(使用UTF-8編碼)。
     static void Q1()
     {
         Console.WriteLine("-----");
@@ -64,6 +66,8 @@ class Program
         }
         Console.WriteLine("已複製完成，請查看copyq1.txt");
     }
+    //檔案處理題目2
+    //讀取1.txt 顯示在畫面上。
     static void Q2()
     {
         Console.WriteLine("-----");
@@ -76,6 +80,8 @@ class Program
             }
         }
     }
+    //檔案處理補充1
+    //寫入九九乘法表資料到一個文字檔到自己指定的文字檔。
     static void Q3()
     {
         Console.WriteLine("-----");
@@ -92,6 +98,8 @@ class Program
         }
         Console.WriteLine($"轉換完成請查看q3.txt");
     }
+    //檔案處理補充2
+    //讀取1.txt 顯示在畫面上，並將1.txt 裡的阿拉伯數字，轉換成中文數字(壹、貳、叁、肆…..)，並儲存到指定的路徑。(UTF-8)
     static void Q4()
     {
         Console.WriteLine("-----");
@@ -115,6 +123,8 @@ class Program
         File.WriteAllText(path, output, new UTF8Encoding(false));
         Console.WriteLine($"轉換完成請查看{path}");
     }
+    //檔案處理補充３
+    //讀取fc4bb.csv，並將此資料轉成HTML TABLE 格式，並儲存到指定的HTML檔裡。
     static void Q5()
     {
         Console.WriteLine("-----");
@@ -139,6 +149,9 @@ class Program
             sw.WriteLine("</table>");
         }
     }
+    //亂數題目1
+    /*請隨機由0~99產生一個數字輸出。
+Random rom= new Random();//亂數種子int I = rom.Next(0, 100);//回傳0-99的亂數*/
     static void Q6()
     {
         Console.WriteLine("-----");
@@ -146,6 +159,8 @@ class Program
         int n = rom.Next(0, 100);
         Console.WriteLine(n);
     }
+    //亂數題目2
+    //請隨機由0~99產生10個數字輸出。
     static void Q7()
     {
         Console.WriteLine("-----");
@@ -156,6 +171,8 @@ class Program
             Console.WriteLine(n);
         }
     }
+    //亂數題目３
+    //隨機幫每位學員產生成績，並寫入文字檔(欄位之間用，分開，換行寫入下一筆)。
     static void Q8()
     {
         Console.WriteLine("-----");
@@ -177,6 +194,8 @@ class Program
             }
         }
     }
+    //亂數補充一
+    //請設計樂透開獎程式。
     static void Q9()
     {
         Console.WriteLine("-----");
@@ -197,6 +216,8 @@ class Program
             pool.RemoveAt(n);
         }
     }
+    //亂數補充二
+    //請在文字檔裡輸入所有午餐的店家，讀取文字檔，隨機抽出今天中午要吃哪一家。
     static void Q10()
     {
         Console.WriteLine("-----");
@@ -206,6 +227,8 @@ class Program
         int n = rom.Next(0, py.Length);
         Console.WriteLine(py[n]);
     }
+    //亂數補充三
+    //請在文字檔裡輸入所有教室裡的學員名字，讀取文字檔，隨機抽出今天的值日生，抽過不能再被抽中，直到全部學員都被抽過，才可以再被抽。
     static void Q11()
     {
         Console.WriteLine("-----");
@@ -233,12 +256,16 @@ class Program
         pool.RemoveAt(idx);
         File.WriteAllLines(poolFile, pool, new UTF8Encoding(false));
     }
+    //日期題目1
+    //顯示現在日期與時間。
     static void Q12()
     {
         Console.WriteLine("-----");
         DateTime currentTime = DateTime.Now;
         Console.WriteLine("現在的系統時間是：" + currentTime);
     }
+    //日期題目2
+    //顯示再過30天為哪一天。
     static void Q13()
     {
         Console.WriteLine("-----");
@@ -246,6 +273,8 @@ class Program
         DateTime future = today.AddDays(30);
         Console.WriteLine("一個月後時間是:" + future);
     }
+     //日期題目3
+    //顯示24小時前的年月日時分秒。
     static void Q14()
     {
         Console.WriteLine("-----");
@@ -253,6 +282,8 @@ class Program
         DateTime future = today.AddDays(-1);
         Console.WriteLine("24小時前時間是:" + future);
     }
+    //日期題目4
+    //取得目前是幾月。
     static void Q15()
     {
         Console.WriteLine("-----");
@@ -260,6 +291,8 @@ class Program
         int future = today.Month;
         Console.WriteLine("取得目前是幾月:" + future + "月");
     }
+    //日期題目5
+    //取得明年是否為閏年。(可以試試民國)
     static void Q16()
     {
         Console.WriteLine("-----");
@@ -283,6 +316,8 @@ class Program
             Console.WriteLine("平年");
         }
     }
+    //日期題目6
+    //取得離2025年1月1日還有幾天。
     static void Q17()
     {
         Console.WriteLine("-----");
@@ -292,6 +327,16 @@ class Program
         int days = Math.Abs(diff.Days);                  // 從 TimeSpan 挖出「天數」
         Console.WriteLine("相差 " + days + " 天");
     }
+    //日期補充一
+    /*星期一，猴子穿新衣，
+星期二，猴子肚子餓，
+星期三，猴子去爬山，
+星期四，猴子看電視，
+呈期五，猴子去跳舞，
+星期六，猴子去斗六，
+星期日，猴子過生日。
+請顯示今天猴子做甚麼事。
+*/
     static void Q18()
     {
         string[] things = { "過生日", "穿新衣", "肚子餓", "去爬山", "看電視", "去跳舞", "去斗六" };
@@ -300,6 +345,8 @@ class Program
         Console.WriteLine("今天猴子" + thing);
     }
 
+    //日期補充二
+    //輸入‘兩個日期，輸出兩個日期相差幾天。
     static void Q19()
     {
         Console.WriteLine("-----");
@@ -321,6 +368,12 @@ class Program
             Console.WriteLine("日期格式錯誤！");
         }
     }
+    //日期補充三
+    /*兩光法師時常替人占卜，由於他算得又快有便宜，因此生意源源不絕，時常大排長龍，他想算 得更快一點，因此找了你這位電腦高手幫他用電腦來加快算命的速度。
+　　他的占卜規則很簡單，規則是這樣的，隨機產生一個今年日期，然後依照下面的公式：
+M=月D=日S=(M*2+D)%3
+得到 S 的值，再依照 S 的值從 0 到 2 分別給與 普通、吉、大吉 等三種不同的運勢，輸出運勢。
+*/
     static void Q20()
     {
         Console.WriteLine("-----");
